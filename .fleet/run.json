@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name" : "Build package",
+            "type" : "command",
+            "program" : "cargo",
+            "args" : ["build", "--package", "rtsp_client"]
+        }
+    ]
+}
