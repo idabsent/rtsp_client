@@ -21,7 +21,7 @@ impl Accept {
         static ALLOW_RANGE: RangeInclusive<f32> = 0.0 ..= 1.0;
 
         if !ALLOW_RANGE.contains(&qvalue) {
-            panic!("Unexpected qvalue. qvalue maybe in {ALLOW_RANGE:?}");
+            panic!("Unexpected qvalue. qvalue must be in {ALLOW_RANGE:?}");
         }
 
         self.content_types.insert(content_type.to_string(), qvalue);
