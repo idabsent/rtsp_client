@@ -27,9 +27,11 @@ impl<'a> Header for ContentBase<'a> {
     }
 
     fn allow_in_methods() -> &'static [RequestMethod] where Self: Sized {
-        &[RequestMethod::Describe, RequestMethod::GetParameter,
+        &[RequestMethod::Describe, RequestMethod::Options,
+          RequestMethod::Setup, RequestMethod::GetParameter,
           RequestMethod::SetParameter, RequestMethod::Redirect,
-          RequestMethod::PlayNotify]
+          RequestMethod::PlayNotify, RequestMethod::Play,
+          RequestMethod::Pause, RequestMethod::Teardown]
     }
 
     fn header_position() -> HeaderPosition where Self: Sized {
