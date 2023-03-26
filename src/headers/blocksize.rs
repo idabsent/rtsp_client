@@ -42,7 +42,7 @@ impl Header for Blocksize {
 
     fn allow_in_methods() -> &'static [RequestMethod] where Self: Sized {
         &[RequestMethod::Setup, RequestMethod::Describe,
-          RequestMethod::Options, RequestMethod::Play]
+          RequestMethod::SetParameter, RequestMethod::Play]
     }
 
     fn header_position() -> HeaderPosition where Self: Sized {
