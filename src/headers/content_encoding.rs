@@ -29,11 +29,11 @@ impl ContentEncoding {
 }
 
 impl Header for ContentEncoding {
-    fn header() -> String where Self: Sized {
+    fn header() -> String {
         String::from("Content-Encoding")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] where Self: Sized {
+    fn allow_in_methods() -> &'static [RequestMethod] {
         &[RequestMethod::GetParameter, RequestMethod::SetParameter,
           RequestMethod::Redirect, RequestMethod::PlayNotify,
           RequestMethod::Describe, RequestMethod::Options,
@@ -41,7 +41,7 @@ impl Header for ContentEncoding {
           RequestMethod::Pause, RequestMethod::Teardown]
     }
 
-    fn header_position() -> HeaderPosition where Self: Sized {
+    fn header_position() -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

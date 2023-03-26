@@ -22,11 +22,11 @@ impl<'a> ContentBase<'a> {
 }
 
 impl<'a> Header for ContentBase<'a> {
-    fn header() -> String where Self: Sized {
+    fn header() -> String {
         String::from("Content-Base")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] where Self: Sized {
+    fn allow_in_methods() -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Setup, RequestMethod::GetParameter,
           RequestMethod::SetParameter, RequestMethod::Redirect,
@@ -34,7 +34,7 @@ impl<'a> Header for ContentBase<'a> {
           RequestMethod::Pause, RequestMethod::Teardown]
     }
 
-    fn header_position() -> HeaderPosition where Self: Sized {
+    fn header_position() -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 
