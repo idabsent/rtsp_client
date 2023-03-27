@@ -5,7 +5,7 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
-struct ContentLocation<'a> {
+pub struct ContentLocation<'a> {
     location: URI<'a>,
 }
 
