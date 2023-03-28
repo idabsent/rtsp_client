@@ -3,13 +3,8 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
-use ranges::Ranges;
 use chrono::{DateTime,Utc};
-
-use std::{
-    fmt::{Display, Formatter, Error},
-    string::ToString
-};
+use std::fmt::{Display, Formatter, Error};
 
 pub enum RandomAccess {
     RandomAccess(f32),
@@ -115,7 +110,7 @@ impl Header for MediaProperties {
     }
 
     fn header_position() -> HeaderPosition {
-        HeaderPosition::RequestResponse
+        HeaderPosition::General
     }
 
     fn value(&self) -> String {
