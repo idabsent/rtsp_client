@@ -3,13 +3,13 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
-pub struct Supported {
+pub struct UnUnsupported {
     funcs: Vec<String>,
 }
 
-impl Supported {
-    fn new(funcs: Vec<String>) -> Supported {
-        Supported {
+impl Unsupported {
+    fn new(funcs: Vec<String>) -> Unsupported {
+        Unsupported {
             funcs,
         }
     }
@@ -19,7 +19,7 @@ impl Supported {
     }
 }
 
-impl Header for Supported {
+impl Header for Unsupported {
     fn header() -> String {
         String::from("Session")
     }
@@ -57,13 +57,13 @@ mod test {
 
     #[test]
     fn test_one_tag() {
-        let s_header = Supported::new(vec!["first".to_string()]);
+        let s_header = Unsupported::new(vec!["first".to_string()]);
         assert_eq!(&s_header.value(), "first");
     }
 
     #[test]
     fn test_two_tag() {
-        let s_header = Supported::new(vec!["first".to_string(), "second".to_string()]);
+        let s_header = Unsupported::new(vec!["first".to_string(), "second".to_string()]);
         assert_eq!(&s_header.value(), "first, second");
     }
 }
