@@ -9,7 +9,7 @@ pub struct UserAgent {
 }
 
 impl UserAgent {
-    fn new(agent_name: String, version: f32) -> Server {
+    fn new(agent_name: String, version: f32) -> UserAgent {
         if version.is_sign_negative() {
             panic!("Version number must be positive number");
         }
@@ -29,7 +29,7 @@ impl UserAgent {
     }
 }
 
-impl Header for Server {
+impl Header for UserAgent {
     fn header() -> String {
         String::from("User-Agent")
     }
@@ -47,6 +47,6 @@ impl Header for Server {
     }
 
     fn value(&self) -> String {
-        format!("{}/{}", self.server_name, self.version)
+        format!("{}/{}", self.agent_name, self.version)
     }
 }
