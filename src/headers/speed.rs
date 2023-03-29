@@ -27,11 +27,7 @@ impl Header for Speed {
     }
 
     fn allow_in_methods() -> &'static [RequestMethod] {
-        &[RequestMethod::Setup, RequestMethod::Play,
-          RequestMethod::Options, RequestMethod::Teardown,
-          RequestMethod::GetParameter, RequestMethod::SetParameter,
-          RequestMethod::Redirect, RequestMethod::PlayNotify,
-          RequestMethod::Pause,]
+        &[RequestMethod::Play]
     }
 
     fn header_position() -> HeaderPosition {
