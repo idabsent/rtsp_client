@@ -36,16 +36,16 @@ impl Bandwith {
 }
 
 impl Header for Bandwith {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Bandwith")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup, RequestMethod::Describe,
           RequestMethod::Options, RequestMethod::Play]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

@@ -20,11 +20,11 @@ impl ContentType {
 }
 
 impl Header for ContentType {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Content-Type")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -32,7 +32,7 @@ impl Header for ContentType {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

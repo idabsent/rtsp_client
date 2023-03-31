@@ -43,15 +43,15 @@ impl AcceptRanges {
 }
 
 impl Header for AcceptRanges {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Accept-Ranges")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Play, RequestMethod::GetParameter]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

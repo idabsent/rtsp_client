@@ -20,15 +20,15 @@ impl RequestStatus {
 }
 
 impl Header for RequestStatus {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Request-Status")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

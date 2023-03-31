@@ -99,17 +99,17 @@ impl MediaProperties {
 }
 
 impl Header for MediaProperties {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Media-Properties")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::GetParameter,
           RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

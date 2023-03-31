@@ -20,11 +20,11 @@ impl Supported {
 }
 
 impl Header for Supported {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Session")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Options, RequestMethod::Teardown,
           RequestMethod::GetParameter, RequestMethod::SetParameter,
@@ -32,7 +32,7 @@ impl Header for Supported {
           RequestMethod::Pause,]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

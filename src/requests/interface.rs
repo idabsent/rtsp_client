@@ -36,6 +36,12 @@ impl fmt::Display for RequestMethod {
     }
 }
 
+pub trait HeadersBox {
+    type HeaderItem;
+
+    fn add_header(&mut self, header: Self::HeaderItem);
+}
+
 pub trait Request {
     fn method(&self) -> RequestMethod;
     fn add_header(&mut self, header: Box<dyn Header>);

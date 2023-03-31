@@ -29,16 +29,16 @@ impl LastModified {
 }
 
 impl Header for LastModified {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Last-Modified")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::GetParameter]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

@@ -29,15 +29,15 @@ impl AcceptEncoding {
 }
 
 impl Header for AcceptEncoding {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Accept-Encoding")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe,]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

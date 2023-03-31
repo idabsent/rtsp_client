@@ -33,11 +33,11 @@ impl Iterator for CSeq {
 }
 
 impl Header for CSeq {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("CSeq")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Play,
           RequestMethod::Setup, RequestMethod::Options,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -45,7 +45,7 @@ impl Header for CSeq {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

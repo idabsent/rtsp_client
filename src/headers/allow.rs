@@ -22,16 +22,16 @@ impl Allow {
 }
 
 impl Header for Allow {
-    fn header() -> String  {
+    fn header(&self) -> String  {
         String::from("Allow")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod]  {
+    fn allow_in_methods(&self) -> &'static [RequestMethod]  {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::SetParameter, RequestMethod::GetParameter]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

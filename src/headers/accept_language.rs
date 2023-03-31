@@ -29,16 +29,16 @@ impl AcceptLanguage {
 }
 
 impl Header for AcceptLanguage {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Accept-Language")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::GetParameter,
           RequestMethod::SetParameter, RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition  {
+    fn header_position(&self) -> HeaderPosition  {
         HeaderPosition::RequestResponse
     }
 

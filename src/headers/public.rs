@@ -28,11 +28,11 @@ impl Public {
 }
 
 impl Header for Public {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Header")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Play, RequestMethod::Pause,
           RequestMethod::Setup, RequestMethod::Teardown,
@@ -40,7 +40,7 @@ impl Header for Public {
           RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

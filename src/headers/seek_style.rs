@@ -11,15 +11,15 @@ pub enum SeekStyle {
 }
 
 impl Header for SeekStyle {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Seek-Style")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Play]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

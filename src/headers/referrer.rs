@@ -22,15 +22,15 @@ impl<'a> Referrer<'a> {
 }
 
 impl Header for Referrer<'_> {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Referrer")
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Setup,
           RequestMethod::Options, RequestMethod::Teardown,

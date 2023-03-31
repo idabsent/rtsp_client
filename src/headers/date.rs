@@ -30,11 +30,11 @@ impl Date {
 }
 
 impl Header for Date {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Date")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Options, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -42,7 +42,7 @@ impl Header for Date {
           RequestMethod::PlayNotify, RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

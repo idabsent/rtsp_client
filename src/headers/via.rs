@@ -55,11 +55,11 @@ impl Via {
 }
 
 impl Header for Via {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Via")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Play, RequestMethod::Options,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -67,7 +67,7 @@ impl Header for Via {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

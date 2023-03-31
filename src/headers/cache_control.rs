@@ -57,16 +57,16 @@ impl CacheControl {
 }
 
 impl Header for CacheControl {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Cache-Control")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::GetParameter, RequestMethod::SetParameter,
           RequestMethod::Describe, RequestMethod::Setup]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

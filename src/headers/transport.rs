@@ -313,15 +313,15 @@ fn addrs_vec_to_str(addrs: &Vec<SocketAddr>) -> String {
 }
 
 impl Header for Transport {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Transport")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

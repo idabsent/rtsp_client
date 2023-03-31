@@ -22,11 +22,11 @@ impl<'a> ContentLocation<'a> {
 }
 
 impl<'a> Header for ContentLocation<'a> {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Content-Location")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -34,7 +34,7 @@ impl<'a> Header for ContentLocation<'a> {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

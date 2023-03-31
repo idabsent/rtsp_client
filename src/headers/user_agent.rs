@@ -30,11 +30,11 @@ impl UserAgent {
 }
 
 impl Header for UserAgent {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("User-Agent")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Play, RequestMethod::Options,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -42,7 +42,7 @@ impl Header for UserAgent {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

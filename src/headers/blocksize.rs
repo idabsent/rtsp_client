@@ -36,16 +36,16 @@ impl Blocksize {
 }
 
 impl Header for Blocksize {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Blocksize")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup, RequestMethod::Describe,
           RequestMethod::SetParameter, RequestMethod::Play]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

@@ -20,17 +20,17 @@ impl Scale {
 }
 
 impl Header for Scale {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Scale")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Options, RequestMethod::GetParameter,
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

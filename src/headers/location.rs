@@ -22,18 +22,18 @@ impl<'a> Location<'a> {
 }
 
 impl Header for Location<'_> {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Location")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Pause, RequestMethod::Play,
           RequestMethod::Options, RequestMethod::Teardown,
           RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

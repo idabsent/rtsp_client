@@ -68,15 +68,15 @@ fn absolute_time_repr(date_time: &DateTime<Utc>) -> String {
 }
 
 impl Header for TerminateReason {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Terminate-Reason")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Redirect, RequestMethod::Teardown]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

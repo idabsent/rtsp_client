@@ -22,15 +22,15 @@ impl Speed {
 }
 
 impl Header for Speed {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Session")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Play]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::General
     }
 

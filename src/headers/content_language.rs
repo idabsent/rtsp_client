@@ -29,11 +29,11 @@ impl ContentLanguage {
 }
 
 impl Header for ContentLanguage {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Content-Language")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -41,7 +41,7 @@ impl Header for ContentLanguage {
           RequestMethod::PlayNotify, RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

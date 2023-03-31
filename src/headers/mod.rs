@@ -1,6 +1,6 @@
 pub mod interface;
 
-mod accept;
+pub mod accept;
 mod accept_credentials;
 mod accept_encoding;
 mod accept_language;

@@ -26,11 +26,11 @@ impl Require {
 }
 
 impl Header for Require {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Require")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Play, RequestMethod::Options,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -38,7 +38,7 @@ impl Header for Require {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 

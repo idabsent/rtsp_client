@@ -20,11 +20,11 @@ impl ContentLength {
 }
 
 impl Header for ContentLength {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("Content-Length")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Options,
           RequestMethod::Setup, RequestMethod::Play,
           RequestMethod::Pause, RequestMethod::Teardown,
@@ -32,7 +32,7 @@ impl Header for ContentLength {
           RequestMethod::Redirect, RequestMethod::PlayNotify]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::MessageBody
     }
 

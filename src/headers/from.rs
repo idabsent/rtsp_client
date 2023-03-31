@@ -22,11 +22,11 @@ impl<'a> From<'a> {
 }
 
 impl<'a> Header for From<'a> {
-    fn header() -> String {
+    fn header(&self) -> String {
         String::from("From")
     }
 
-    fn allow_in_methods() -> &'static [RequestMethod] {
+    fn allow_in_methods(&self) -> &'static [RequestMethod] {
         &[RequestMethod::Describe, RequestMethod::Setup,
           RequestMethod::Play, RequestMethod::Pause,
           RequestMethod::Teardown, RequestMethod::Options,
@@ -34,7 +34,7 @@ impl<'a> Header for From<'a> {
           RequestMethod::Redirect]
     }
 
-    fn header_position() -> HeaderPosition {
+    fn header_position(&self) -> HeaderPosition {
         HeaderPosition::RequestResponse
     }
 
