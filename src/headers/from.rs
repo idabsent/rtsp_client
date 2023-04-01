@@ -5,6 +5,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn from_helper() -> String {
+    String::from("From")
+}
+
 pub struct From<'a> {
     uri: URI<'a>
 }

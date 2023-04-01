@@ -153,6 +153,10 @@ impl Display for ContransCon {
     }
 }
 
+pub fn transport_helper() -> String {
+    String::from("Transport")
+}
+
 pub struct Transport {
     profile: Profile,
     lower_transport: LowerTransport,
@@ -314,7 +318,7 @@ fn addrs_vec_to_str(addrs: &Vec<SocketAddr>) -> String {
 
 impl Header for Transport {
     fn header(&self) -> String {
-        String::from("Transport")
+        transport_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {
@@ -348,6 +352,11 @@ impl Header for Transport {
         self.src_addr.is_empty().then(||
             {
                 content.push_str(&format!(";src_addr={}", addrs_vec_to_str(&self.src_addr)));
+            }
+        );
+        self.rtcp_mux.then(||
+            {
+                content.push_str("RTCP-mux");
             }
         );
         if let Some(ref setup) = self.setup {

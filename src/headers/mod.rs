@@ -54,5 +54,6 @@ mod terminate_reason;
 mod timestamp;
 mod transport;
 mod user_agent;
+mod unsupported;
 mod via;
 mod www_authenticate;

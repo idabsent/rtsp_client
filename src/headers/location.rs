@@ -5,6 +5,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn location_helper() -> String {
+    String::from("Location")
+}
+
 pub struct Location<'a> {
     uri: URI<'a>,
 }
@@ -23,7 +27,7 @@ impl<'a> Location<'a> {
 
 impl Header for Location<'_> {
     fn header(&self) -> String {
-        String::from("Location")
+        location_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

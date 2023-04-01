@@ -6,6 +6,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn accept_helper() -> String {
+    String::from("Accept")
+}
+
 pub struct Accept {
     content_types: HashMap<String, f32>,
 }
@@ -30,7 +34,7 @@ impl Accept {
 
 impl Header for Accept {
     fn header(&self) -> String {
-        String::from("Accept")
+        accept_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

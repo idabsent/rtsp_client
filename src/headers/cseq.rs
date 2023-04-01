@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn cseq_helper() -> String {
+    String::from("CSeq")
+}
+
 pub struct CSeq {
     number: u32,
 }
@@ -34,7 +38,7 @@ impl Iterator for CSeq {
 
 impl Header for CSeq {
     fn header(&self) -> String {
-        String::from("CSeq")
+        cseq_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

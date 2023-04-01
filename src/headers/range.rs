@@ -93,6 +93,10 @@ fn absolute_time_repr(date_time: &DateTime<Utc>) -> String {
     format!("{}", date_time.format("%Y%m%d%H%M%S%.6fZ"))
 }
 
+pub fn range_helper() -> String {
+    String::from("Range")
+}
+
 pub enum Range<T>
 where
     T: RangeBounds<NptType>
@@ -107,7 +111,7 @@ where
     T: RangeBounds<NptType>
 {
     fn header(&self) -> String {
-        String::from("Range")
+        range_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

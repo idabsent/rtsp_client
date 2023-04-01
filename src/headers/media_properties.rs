@@ -6,6 +6,10 @@ use crate::{
 use chrono::{DateTime,Utc};
 use std::fmt::{Display, Formatter, Error};
 
+pub fn media_properties_helper() -> String {
+    String::from("Media-Properties")
+}
+
 pub enum RandomAccess {
     RandomAccess(f32),
     BegginingOnly,
@@ -100,7 +104,7 @@ impl MediaProperties {
 
 impl Header for MediaProperties {
     fn header(&self) -> String {
-        String::from("Media-Properties")
+        media_properties_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

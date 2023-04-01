@@ -8,6 +8,10 @@ use chrono::{
     Utc,
 };
 
+pub fn require_after_helper() -> String {
+    String::from("Require-After")
+}
+
 pub enum RetryAfter {
     DateTime(DateTime<Utc>),
     Seconds(u32),
@@ -15,7 +19,7 @@ pub enum RetryAfter {
 
 impl Header for RetryAfter {
     fn header(&self) -> String {
-        String::from("Require")
+        require_after_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -7,6 +7,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn last_modified_helper() -> String {
+    String::from("Last-Modified")
+}
+
 pub struct LastModified {
     date_time: DateTime<Local>,
 }
@@ -30,7 +34,7 @@ impl LastModified {
 
 impl Header for LastModified {
     fn header(&self) -> String {
-        String::from("Last-Modified")
+        last_modified_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

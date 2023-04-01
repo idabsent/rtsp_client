@@ -4,6 +4,7 @@ use crate::headers::interface::{
     Header,
 };
 
+#[derive(PartialEq, Eq, Debug)]
 pub enum RequestMethod {
     Describe,
     GetParameter,
@@ -36,14 +37,26 @@ impl fmt::Display for RequestMethod {
     }
 }
 
+pub struct BuilderError;
+
 pub trait HeadersBox {
     type HeaderItem;
 
-    fn add_header(&mut self, header: Self::HeaderItem);
+    fn add_header(&mut self, header: Self::HeaderItem) -> &mut Self;
+    fn get_header(&self, header_helper: fn() -> String) -> Option<&Self::HeaderItem>;
+}
+
+pub trait Builder {
+    type HeaderItem;
+
+    fn for_request(&mut self, request: RequestMethod) -> &mut Self;
+    fn add_header(&mut self, header: Self::HeaderItem) -> &mut Self;
+    fn build(self) -> Result<Box<dyn Request<HeaderItem = Self::HeaderItem>>, BuilderError>;
 }
 
 pub trait Request {
+    type HeaderItem;
+
     fn method(&self) -> RequestMethod;
-    fn add_header(&mut self, header: Box<dyn Header>);
-    fn get_header<T>(&self, field: &T) -> Box<dyn Header> where T: Fn() -> String;
+    fn get_header(&self, header_helper: fn() -> String) -> Option<&Self::HeaderItem>;
 }

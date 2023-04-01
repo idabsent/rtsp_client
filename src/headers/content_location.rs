@@ -5,6 +5,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+pub fn content_location_helper() -> String {
+    String::from("Content-Location")
+}
+
 pub struct ContentLocation<'a> {
     location: URI<'a>,
 }

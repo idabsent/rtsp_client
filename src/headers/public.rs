@@ -5,6 +5,10 @@ use crate::{
 
 use std::string::ToString;
 
+pub fn public_helper() -> String {
+    String::from("Public")
+}
+
 pub struct Public {
     allowed: Vec<RequestMethod>,
 }
@@ -29,7 +33,7 @@ impl Public {
 
 impl Header for Public {
     fn header(&self) -> String {
-        String::from("Header")
+        public_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

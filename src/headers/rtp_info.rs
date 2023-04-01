@@ -57,6 +57,10 @@ impl Display for RTPInfoParameter<'_> {
     }
 }
 
+pub fn rtp_info_helper() -> String {
+    String::from("RTP-Info")
+}
+
 pub struct RTPInfo<'a> {
     parameters: Vec<RTPInfoParameter<'a>>
 }
@@ -81,7 +85,7 @@ impl<'a> RTPInfo<'a> {
 
 impl Header for RTPInfo<'_> {
     fn header(&self) -> String {
-        String::from("RTP-Info")
+        rtp_info_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

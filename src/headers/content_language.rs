@@ -6,6 +6,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+pub fn content_language_helper() -> String {
+    String::from("Content-Language")
+}
+
 pub struct ContentLanguage {
     content_languages: HashMap<String, f32>,
 }
@@ -30,7 +34,7 @@ impl ContentLanguage {
 
 impl Header for ContentLanguage {
     fn header(&self) -> String {
-        String::from("Content-Language")
+        content_language_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

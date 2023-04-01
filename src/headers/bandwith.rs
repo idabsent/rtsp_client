@@ -19,6 +19,10 @@ impl BitCount {
     }
 }
 
+pub fn bandwith_helper() -> String {
+    String::from("Bandwith")
+}
+
 pub struct Bandwith {
     size: BitCount,
 }
@@ -37,7 +41,7 @@ impl Bandwith {
 
 impl Header for Bandwith {
     fn header(&self) -> String {
-        String::from("Bandwith")
+        bandwith_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

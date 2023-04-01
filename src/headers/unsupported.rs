@@ -3,7 +3,11 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
-pub struct UnUnsupported {
+pub fn unsupported_helper() -> String {
+    String::from("Unsupported")
+}
+
+pub struct Unsupported {
     funcs: Vec<String>,
 }
 
@@ -21,7 +25,7 @@ impl Unsupported {
 
 impl Header for Unsupported {
     fn header(&self) -> String {
-        String::from("Session")
+        unsupported_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

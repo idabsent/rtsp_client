@@ -40,6 +40,10 @@ impl fmt::Display for CacheMethod {
     }
 }
 
+fn cache_control_helper() -> String {
+    String::from("Cache-Control")
+}
+
 pub struct CacheControl {
     cache_method: CacheMethod,
 }
@@ -58,7 +62,7 @@ impl CacheControl {
 
 impl Header for CacheControl {
     fn header(&self) -> String {
-        String::from("Cache-Control")
+        cache_control_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

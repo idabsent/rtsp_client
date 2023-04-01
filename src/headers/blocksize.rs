@@ -19,6 +19,10 @@ impl OctetCount {
     }
 }
 
+pub fn blocksize_helper() -> String {
+    String::from("Blocksize")
+}
+
 pub struct Blocksize {
     size: OctetCount,
 }
@@ -37,7 +41,7 @@ impl Blocksize {
 
 impl Header for Blocksize {
     fn header(&self) -> String {
-        String::from("Blocksize")
+        blocksize_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -5,6 +5,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+fn content_base_helper() -> String {
+    String::from("Content-Base")
+}
+
 pub struct ContentBase<'a> {
     uri: URI<'a>,
 }
@@ -23,7 +27,7 @@ impl<'a> ContentBase<'a> {
 
 impl<'a> Header for ContentBase<'a> {
     fn header(&self) -> String {
-        String::from("Content-Base")
+        content_base_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

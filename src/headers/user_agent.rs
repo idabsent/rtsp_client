@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn user_agent_helper() -> String {
+    String::from("User-Agent")
+}
+
 pub struct UserAgent {
     agent_name: String,
     version: f32,
@@ -31,7 +35,7 @@ impl UserAgent {
 
 impl Header for UserAgent {
     fn header(&self) -> String {
-        String::from("User-Agent")
+        user_agent_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn session_helper() -> String {
+    String::from("Session")
+}
+
 pub struct Session {
     session_id: String,
 }
@@ -21,7 +25,7 @@ impl Session {
 
 impl Header for Session {
     fn header(&self) -> String {
-        String::from("Session")
+        session_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

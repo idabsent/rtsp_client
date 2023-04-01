@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn server_helper() -> String {
+    String::from("Server")
+}
+
 pub struct Server {
     server_name: String,
     version: f32,
@@ -31,7 +35,7 @@ impl Server {
 
 impl Header for Server {
     fn header(&self) -> String {
-        String::from("Server")
+        server_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn scale_helper() -> String {
+    String::from("Scale")
+}
+
 pub struct Scale {
     scale: i8,
 }
@@ -21,7 +25,7 @@ impl Scale {
 
 impl Header for Scale {
     fn header(&self) -> String {
-        String::from("Scale")
+        scale_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

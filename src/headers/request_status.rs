@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn request_status_helper() -> String {
+    String::from("Request-Status")
+}
+
 pub struct RequestStatus {
     cseq: u32,
     status_code: u16,
@@ -21,7 +25,7 @@ impl RequestStatus {
 
 impl Header for RequestStatus {
     fn header(&self) -> String {
-        String::from("Request-Status")
+        request_status_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

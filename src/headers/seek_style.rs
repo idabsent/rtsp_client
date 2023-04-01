@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn seek_style_helper() -> String {
+    String::from("Seek-Style")
+}
+
 pub enum SeekStyle {
     Rap,
     CoRap,
@@ -12,7 +16,7 @@ pub enum SeekStyle {
 
 impl Header for SeekStyle {
     fn header(&self) -> String {
-        String::from("Seek-Style")
+        seek_style_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

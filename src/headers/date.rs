@@ -7,6 +7,10 @@ use chrono::{
     DateTime, Local,
 };
 
+pub fn date_helper() -> String {
+    String::from("Date")
+}
+
 struct Date {
     date: DateTime<Local>,
 }
@@ -31,7 +35,7 @@ impl Date {
 
 impl Header for Date {
     fn header(&self) -> String {
-        String::from("Date")
+        date_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

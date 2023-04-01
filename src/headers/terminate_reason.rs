@@ -35,6 +35,10 @@ impl Display for Reason {
     }
 }
 
+pub fn terminate_reason_helper() -> String {
+    String::from("Terminate-Reason")
+}
+
 pub struct TerminateReason {
     reason: Reason,
     time: Option<DateTime<Utc>>,
@@ -69,7 +73,7 @@ fn absolute_time_repr(date_time: &DateTime<Utc>) -> String {
 
 impl Header for TerminateReason {
     fn header(&self) -> String {
-        String::from("Terminate-Reason")
+        terminate_reason_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn pipelined_requests_helper() -> String {
+    String::from("Pipelined-Requests")
+}
+
 pub struct PipelinedRequests{
     request_id: u32,
 }
@@ -21,7 +25,7 @@ impl PipelinedRequests {
 
 impl Header for PipelinedRequests {
     fn header(&self) -> String {
-        String::from("Pipelined-Request")
+        pipelined_requests_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

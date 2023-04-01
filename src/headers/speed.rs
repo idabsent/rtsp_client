@@ -5,6 +5,10 @@ use crate::{
 
 use std::ops::RangeInclusive;
 
+pub fn speed_helper() -> String {
+    String::from("Speed")
+}
+
 pub struct Speed {
     range: RangeInclusive<f32>,
 }
@@ -23,7 +27,7 @@ impl Speed {
 
 impl Header for Speed {
     fn header(&self) -> String {
-        String::from("Session")
+        speed_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

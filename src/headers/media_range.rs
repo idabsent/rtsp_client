@@ -3,11 +3,15 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn media_range_helper() -> String {
+    String::from("Media-Range")
+}
+
 pub struct MediaRange;
 
 impl Header for MediaRange {
     fn header(&self) -> String {
-        String::from("Media-Range")
+        media_range_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

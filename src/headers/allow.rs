@@ -5,6 +5,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+fn allow_helper() -> String {
+    String::from("Allow")
+}
+
 pub struct Allow {
     allowed: Vec<RequestMethod>,
 }
@@ -23,7 +27,7 @@ impl Allow {
 
 impl Header for Allow {
     fn header(&self) -> String  {
-        String::from("Allow")
+        allow_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod]  {

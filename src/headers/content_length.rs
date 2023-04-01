@@ -3,6 +3,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+pub fn content_length_helper() -> String {
+    String::from("Content-Length")
+}
+
 pub struct ContentLength {
     length: u32,
 }

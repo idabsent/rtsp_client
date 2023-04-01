@@ -5,6 +5,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn referrer_helper() -> String {
+    String::from("Referrer")
+}
+
 pub struct Referrer<'a> {
     uri: URI<'a>
 }
@@ -23,7 +27,7 @@ impl<'a> Referrer<'a> {
 
 impl Header for Referrer<'_> {
     fn header(&self) -> String {
-        String::from("Referrer")
+        referrer_helper()
     }
 
     fn header_position(&self) -> HeaderPosition {

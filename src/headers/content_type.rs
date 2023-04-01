@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn content_type_helper() -> String {
+    String::from("Content-Type")
+}
+
 pub struct ContentType {
     content_type: String,
 }
@@ -21,7 +25,7 @@ impl ContentType {
 
 impl Header for ContentType {
     fn header(&self) -> String {
-        String::from("Content-Type")
+        content_type_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

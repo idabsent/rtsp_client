@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn require_helper() -> String {
+    String::from("Require")
+}
+
 pub struct Require {
     funcs: Vec<String>,
 }

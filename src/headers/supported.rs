@@ -3,6 +3,10 @@ use crate::{
     requests::interface::RequestMethod,
 };
 
+pub fn supported_helper() -> String {
+    String::from("Supported")
+}
+
 pub struct Supported {
     funcs: Vec<String>,
 }
@@ -21,7 +25,7 @@ impl Supported {
 
 impl Header for Supported {
     fn header(&self) -> String {
-        String::from("Session")
+        supported_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

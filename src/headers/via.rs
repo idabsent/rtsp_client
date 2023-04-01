@@ -36,6 +36,10 @@ pub struct Via {
     nodes: Vec<ViaParameter>,
 }
 
+pub fn via_helper() -> String {
+    String::from("Via")
+}
+
 impl Via {
     fn new() -> Via {
         Via {
@@ -56,7 +60,7 @@ impl Via {
 
 impl Header for Via {
     fn header(&self) -> String {
-        String::from("Via")
+        via_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {

@@ -6,6 +6,10 @@ use crate::{
     requests::interface::{RequestMethod},
 };
 
+pub fn content_encoding_helper() -> String {
+    String::from("Content-Encoding")
+}
+
 pub struct ContentEncoding {
     content_encodings: HashMap<String, f32>,
 }
@@ -30,7 +34,7 @@ impl ContentEncoding {
 
 impl Header for ContentEncoding {
     fn header(&self) -> String {
-        String::from("Content-Encoding")
+        content_encoding_helper()
     }
 
     fn allow_in_methods(&self) -> &'static [RequestMethod] {
